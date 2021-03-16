@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.store_verification.StoreVerification">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:contentDescription="@string/indomaret"
+        android:scaleType="centerCrop"
+        android:src="@drawable/indomaret"
+        app:layout_constraintBottom_toTopOf="@id/guideline_horizontal2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_marginTop="24dp"
+        android:elevation="4dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Verifikasi Store"
+        app:titleTextColor="@color/white" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_horizontal2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.40" />
+
+
+    <ImageButton
+        android:id="@+id/img_btn_my_loc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/circle_background_blue_gradient"
+        android:contentDescription="@string/myloc_image_button"
+        android:elevation="8dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_my_loc_white"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_horizontal1" />
+
+    <ImageButton
+        android:id="@+id/img_btn_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_background_blue_gradient"
+        android:contentDescription="@string/photo_img_button"
+        android:elevation="8dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_camera_white"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal1"
+        app:layout_constraintRight_toLeftOf="@id/img_btn_my_loc"
+        app:layout_constraintTop_toTopOf="@id/guideline_horizontal1" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/circle_background_blue_gradient"
+        android:contentDescription="@string/photo_img_button"
+        android:elevation="8dp"
+        android:padding="16dp"
+        android:src="@drawable/ic_direction"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_horizontal1"
+        app:layout_constraintRight_toLeftOf="@id/img_btn_camera"
+        app:layout_constraintTop_toTopOf="@id/guideline_horizontal1" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:elevation="4dp"
+        app:cardCornerRadius="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_visit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_horizontal1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/inner_guidline"
+                android:layout_width="0dp"
+                app:layout_constraintGuide_begin="24dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <ImageView
+                android:id="@+id/ic_loc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/ic_location"
+                android:src="@drawable/ic_location"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/inner_guidline" />
+
+            <TextView
+                android:id="@+id/text_lokasi_blm_sesuai"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/lokasi_belum_sesuai"
+                android:textColor="#D32F2F"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/ic_loc"
+                app:layout_constraintLeft_toRightOf="@id/ic_loc"
+                app:layout_constraintTop_toTopOf="@id/ic_loc" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_reset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:elevation="0dp"
+                android:insetTop="8dp"
+                android:insetBottom="8dp"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:text="@string/reset"
+                android:textAllCaps="false"
+                android:backgroundTint="@color/blue_primary"
+                android:textSize="12sp"
+                app:cornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="@id/ic_loc"
+                app:layout_constraintLeft_toRightOf="@id/text_lokasi_blm_sesuai"
+                app:layout_constraintTop_toTopOf="@id/ic_loc"
+                />
+            <ImageView
+                android:id="@+id/ic_store"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/ic_store"
+                android:src="@drawable/ic_shop"
+                app:layout_constraintLeft_toLeftOf="@id/ic_loc"
+                app:layout_constraintRight_toRightOf="@id/ic_loc"
+                app:layout_constraintTop_toBottomOf="@id/btn_reset" />
+
+            <TextView
+                android:id="@+id/tv_store_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/toko_b"
+                android:layout_marginStart="8dp"
+                app:layout_constraintLeft_toRightOf="@id/ic_store"
+                app:layout_constraintTop_toTopOf="@id/ic_store"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_alamat_toko"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/ic_store"
+                app:layout_constraintLeft_toRightOf="@id/ic_store"
+                android:text="@string/jalan_pal_merah_no_25_jakarta_barat"/>
+
+            <TableLayout
+                android:id="@+id/table_layout"
+                app:layout_constraintTop_toBottomOf="@id/tv_alamat_toko"
+                app:layout_constraintLeft_toRightOf="@id/ic_store"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_width="0dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_height="wrap_content">
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/tipe_outlet"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/double_dot" />
+
+
+                    <TextView
+                        android:text="@string/data"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/tipe_display"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/double_dot" />
+
+
+                    <TextView
+                        android:text="@string/data"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/sub_tipe_display"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/double_dot" />
+
+
+                    <TextView
+                        android:text="@string/data"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/ertm"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/double_dot" />
+
+
+                    <TextView
+                        android:text="@string/ya"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/pareto"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/double_dot" />
+
+
+                    <TextView
+                        android:text="@string/ya"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+                <TableRow
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/e_merchandising"
+                        android:layout_width="0dp"
+                        android:layout_weight="1.5"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/double_dot" />
+
+
+                    <TextView
+                        android:text="@string/ya"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+            </TableLayout>
+
+
+            <ImageView
+                android:id="@+id/ic_note"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:contentDescription="@string/ic_notes"
+                android:src="@drawable/ic_notes"
+                app:layout_constraintLeft_toLeftOf="@id/ic_loc"
+                app:layout_constraintRight_toRightOf="@id/ic_loc"
+                app:layout_constraintTop_toBottomOf="@id/table_layout" />
+
+            <TextView
+                android:id="@+id/text_last_visit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/last_visit"
+                android:layout_marginStart="8dp"
+                app:layout_constraintLeft_toRightOf="@id/ic_note"
+                app:layout_constraintTop_toTopOf="@id/ic_note"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tv_last_visit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp"
+                app:layout_constraintTop_toBottomOf="@id/text_last_visit"
+                app:layout_constraintLeft_toRightOf="@id/ic_note"
+                android:text="@string/dummy_date"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_no_visit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#D32F2F"
+        android:elevation="0dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingTop="6dp"
+        android:textAllCaps="false"
+        android:text="@string/no_visit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btn_visit" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_visit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#5CA5F3"
+        android:elevation="0dp"
+        android:insetTop="0dp"
+        android:textAllCaps="false"
+        android:insetBottom="0dp"
+        android:paddingTop="6dp"
+        android:text="@string/visit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/btn_no_visit"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

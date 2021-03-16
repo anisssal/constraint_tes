@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F4F4F4"
+        tools:context=".ui.dashboard.DashboardActivity">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:elevation="8dp"
+            app:layout_constraintBottom_toTopOf="@id/toolbar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            android:layout_marginTop="24dp"
+            android:background="@color/white"
+            android:elevation="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:subtitle="@string/user_a"
+            app:title="@string/main_menu" />
+
+        <TextView
+            android:id="@+id/marque_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/white"
+            android:elevation="8dp"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:text="@string/terimakasih_untuk_support_yang_luar_biasa_di_masa_masa_covid_19_seperti_ini_semoga_selalu_diberkahi"
+            android:textColor="#1976D2"
+            app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="#1976D2"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/marque_text">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/image_profile"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="8dp"
+                    android:elevation="8dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/indomaret"
+                    android:transitionName="image_transition"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.2" />
+
+                <TextView
+                    android:id="@+id/tv_st001"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/st0001"
+                    android:textColor="@color/white"
+                    app:layout_constraintLeft_toRightOf="@id/image_profile"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_store_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+
+                    android:layout_marginTop="2dp"
+                    android:text="@string/indomaret_komsen"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toRightOf="@id/image_profile"
+                    app:layout_constraintTop_toBottomOf="@id/tv_st001" />
+
+                <TextView
+                    android:id="@+id/tv_cluster"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="2dp"
+                    android:text="@string/cluster_small"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toRightOf="@id/image_profile"
+                    app:layout_constraintTop_toBottomOf="@id/tv_store_name" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/tt_reguler_ertm_big_pareto"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/image_profile"
+                    app:layout_constraintTop_toBottomOf="@id/tv_cluster" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="0dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card1">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/menu"
+                    android:textColor="#FFC107"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageButton
+                    android:id="@+id/btn_information"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/circle_background_blue"
+                    android:contentDescription="@string/btn_information"
+                    android:elevation="8dp"
+                    android:padding="12dp"
+                    android:layout_margin="8dp"
+                    android:src="@drawable/ic_info"
+                    android:transitionName="image_transition"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/btn_product_check"
+                    app:layout_constraintTop_toBottomOf="@id/text_menu" />
+
+                <ImageButton
+                    android:id="@+id/btn_product_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/circle_background_blue"
+                    android:contentDescription="@string/btn_produk_check"
+                    android:elevation="8dp"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_product"
+                    android:transitionName="image_transition"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@id/btn_information"
+                    app:layout_constraintRight_toLeftOf="@id/btn_sku_promo"
+                    app:layout_constraintTop_toBottomOf="@id/text_menu" />
+
+                <ImageButton
+                    android:id="@+id/btn_sku_promo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/circle_background_blue"
+                    android:contentDescription="@string/btn_sku_promo"
+                    android:elevation="8dp"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_local_grocery"
+                    android:transitionName="image_transition"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@id/btn_product_check"
+                    app:layout_constraintRight_toLeftOf="@id/btn_ringkasan"
+                    app:layout_constraintTop_toBottomOf="@id/text_menu" />
+
+                <ImageButton
+                    android:id="@+id/btn_ringkasan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/circle_background_blue"
+                    android:contentDescription="@string/btn_ringkasan"
+                    android:elevation="8dp"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_product"
+                    android:transitionName="image_transition"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@id/btn_sku_promo"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_menu" />
+
+                <TextView
+                    android:id="@+id/text_information"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:text="@string/information"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_information"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/text_produck_check"
+                    app:layout_constraintStart_toStartOf="@+id/btn_information"
+                    app:layout_constraintTop_toBottomOf="@id/btn_information" />
+
+                <TextView
+                    android:id="@+id/text_produck_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+
+                    android:text="@string/product_check"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_product_check"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@id/text_information"
+                    app:layout_constraintRight_toLeftOf="@id/text_sku_promo"
+                    app:layout_constraintStart_toStartOf="@+id/btn_product_check"
+                    app:layout_constraintTop_toBottomOf="@id/btn_product_check" />
+
+                <TextView
+                    android:id="@+id/text_sku_promo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+
+                    android:text="@string/sku_promo"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_sku_promo"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@id/text_produck_check"
+                    app:layout_constraintRight_toLeftOf="@id/text_ringkasan_oos"
+                    app:layout_constraintStart_toStartOf="@+id/btn_sku_promo"
+                    app:layout_constraintTop_toBottomOf="@id/btn_sku_promo" />
+
+
+                <TextView
+                    android:id="@+id/text_ringkasan_oos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:text="@string/ringkasan_oos"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="@+id/btn_ringkasan"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@id/text_sku_promo"
+                    app:layout_constraintStart_toStartOf="@+id/btn_ringkasan"
+                    app:layout_constraintTop_toBottomOf="@id/btn_ringkasan" />
+
+
+                <ImageButton
+                    android:id="@+id/btn_store_invesment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/circle_background_blue"
+                    android:contentDescription="@string/btn_sku_promo"
+                    android:elevation="8dp"
+                    android:padding="12dp"
+                    android:src="@drawable/ic_store_invesment"
+                    android:transitionName="image_transition"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/text_produck_check" />
+                <TextView
+                    android:id="@+id/text_store_invesment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:gravity="center"
+                    android:text="@string/store_invesment"
+                    android:textSize="12sp"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintEnd_toEndOf="@id/btn_store_invesment"
+                    app:layout_constraintStart_toStartOf="@+id/btn_store_invesment"
+                    app:layout_constraintTop_toBottomOf="@id/btn_store_invesment" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
